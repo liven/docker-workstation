@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  db:
+    container_name: mysql
+    image: mysql:5.7
+    volumes:
+      - /docker/var/lib/mysql:/var/lib/mysql
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: '000000'
+  pma:
+    container_name: pma
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_ROOT_PASSWORD: '000000'
