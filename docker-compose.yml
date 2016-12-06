@@ -5,7 +5,7 @@ services:
     container_name: mysql
     image: mysql:5.7
     volumes:
-      - /docker/var/lib/mysql:/var/lib/mysql
+      - ~/.docker/var/lib/mysql:/var/lib/mysql
     restart: always
     ports:
       - 3307:3306
