@@ -16,6 +16,7 @@ services:
     image: phpmyadmin/phpmyadmin
     links:
       - db:db
+    restart: always
     ports:
       - 8181:80
     environment:
